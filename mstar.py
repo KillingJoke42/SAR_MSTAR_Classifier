@@ -28,7 +28,7 @@ ZSU_23_4_path = os.path.join(traindata_path, "ZSU_23_4/")
 train_candidates = [BMP_path, BTR_path, T_path, BTR60_path, _2S1_path, BRDM_path, D7_path, T62_path, ZIL131_path, ZSU_23_4_path]
 
 car_type = -1
-for car in train_candidates[:7] + train_candidates[8:9]:
+for car in train_candidates[:10]:
 	car_type += 1
 	for element in os.listdir(car):
 		print(os.path.join(car, element))
@@ -81,7 +81,7 @@ model.add(layers.MaxPooling2D((2,2)))
 model.add(layers.Flatten())
 model.add(layers.Dense(96, activation="relu"))
 #model.add(layers.Dropout(0.25))
-model.add(layers.Dense(8, activation="softmax"))
+model.add(layers.Dense(10, activation="softmax"))
 
 model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
 log_dir = "logs/fit/" + datetime.now().strftime("%Y%m%d-%H%M%S")
