@@ -21,7 +21,7 @@ class main_window(QWidget):
 	def __init__(self):
 		super().__init__()
 		self.setMinimumSize(640, 400)
-		self.setWindowTitle("ASM_IDE: Making Assembly Language Easier")
+		self.setWindowTitle("SAR image classifier application")
 
 	def change_size(self, size):
 		if size == "Tiny":
